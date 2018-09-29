@@ -1,6 +1,6 @@
-import { ApiController } from './ApiController';
-import { Request, Response } from 'express';
-import { PostService } from '../services/PostService';
+import {ApiController} from './ApiController';
+import {Request, Response} from 'express';
+import {PostService} from '../services/PostService';
 
 export class PostController extends ApiController {
 
@@ -8,14 +8,54 @@ export class PostController extends ApiController {
         super();
     }
 
-    public viewPost(req: Request, res: Response): void {
+
+    public createPost(req: Request, res: Response) {
         try {
-            const results = new PostService().viewPost(req.params.postId);
-            console.log(results);
-            super.sendResponse(res, 'VIEW POSTS', results, true, 200);
+            return new PostService().viewPost(req, res);
         } catch (ex) {
-            console.log(ex.message + ' ERROR MESSAGE ==================== ');
+            console.log(ex.message);
+        }
+    }
+
+    public updatePost(req: Request, res: Response) {
+
+    }
+
+    public deletePost(req: Request, res: Response) {
+
+    }
+
+    public viewPost(req: Request, res: Response) {
+        try {
+            return new PostService().viewPost(req, res);
+        } catch (ex) {
+            console.log(ex.message);
         }
 
     }
+
+    public addPostComment(req: Request, res: Response) {
+
+    }
+
+    public updatePostComment(req: Request, res: Response) {
+
+    }
+
+    public deletePostComment(req: Request, res: Response) {
+
+    }
+
+    public addPostlike(req: Request, res: Response) {
+
+    }
+
+    public removePostLike(req: Request, res: Response) {
+
+    }
+
+    public sharePost(req: Request, res: Response) {
+
+    }
+
 }

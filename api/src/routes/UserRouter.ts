@@ -1,23 +1,25 @@
 import {Router} from 'express';
 import {PostController} from '../app/controllers/PostController';
+import {UserController} from '../app/controllers/UserController';
 
-export class PostRouter {
+export class UserRouter {
 
     public router: Router;
-    public postController: any;
+    public userController: any;
 
     // public PermissionServices: PermissionServices;
 
     constructor() {
-        this.postController = new PostController();
+        this.userController = new UserController();
         this.router = Router();
         this.routes();
     }
 
     // set up our routes
     public routes() {
-        this.router.get('/:postId', this.postController.viewPost);
-        this.router.post('/', this.postController.createPost);
+        this.router.post('/signup', this.userController.singUp);
+        /*this.router.get('/:postId', this.userController.viewPost);
+        this.router.post('/', this.userController.createPost);*/
 
         // Passport.use(new PassportOneSessionPerUser());
 
@@ -48,5 +50,5 @@ export class PostRouter {
 
 }
 
-export default new PostRouter().router;
+export default new UserRouter().router;
 

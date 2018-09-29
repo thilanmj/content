@@ -39,8 +39,15 @@
     "@types/mongodb": "^3.1.4",
     "@types/mongoose": "^5.2.10",
     "@types/passport": "^0.4.6",
+    "@types/passport-facebook": "^2.1.8",
+    "@types/passport-google-oauth": "^1.0.39",
     "@types/passport-jwt": "^3.0.1",
     "@types/passport-local": "^1.0.33",
-    "cors": "^2.8.4"
+    "@types/passport-saml": "^0.15.8",
+    "cors": "^2.8.4",
+    "joi": "^13.6.0",
+    "joi-objectid": "^2.0.0",
+    "jwt-simple": "^0.5.5",
+    "winston": "^3.1.0"
   }
 }

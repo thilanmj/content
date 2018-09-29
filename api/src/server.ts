@@ -6,6 +6,8 @@ import * as cors from 'cors';
 import Database from './configs/Database';
 
 import PostRouter from './routes/PostRouter';
+import UserRouter from './routes/UserRouter';
+import AuthRouter from './routes/AuthRouter';
 
 export default class Server {
 
@@ -95,6 +97,8 @@ export default class Server {
         this.app.use('/', router);
 
         this.app.use('/api/v1/posts', PostRouter);
+        this.app.use('/api/v1/users', UserRouter);
+        this.app.use('/api/v1/auth', AuthRouter);
 
         this.app.all('*', (req, res) => {
             // throw new Error('Bad request');
