@@ -36,11 +36,9 @@ export class UserRepository {
                 },
                 signupValidate, (err, value) => {
                     if (err) {
-                        //logger.error(err);
-                        // main.sendResponse(res, ResponseMessage.VALIDATION_ERROR, err, false, ResponseCode.VALIDATION_ERROR);
+                        console.log('Error ====>  ');
                         // tslint:disable-next-line:triple-equals
                     } else if (lastName == '') {
-                        //main.sendResponse(res, ResponseMessage.LAST_NAME, err, false, ResponseCode.VALIDATION_ERROR);
                     } else {
 
                         const userData = new User({

@@ -64,3 +64,4 @@ api/.idea/
 api/node_modules/
 web/node_modules/
 api/dist/
+web/.idea/

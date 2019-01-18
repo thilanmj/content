@@ -49,12 +49,12 @@ const UserSchema: Schema = new Schema({
         default: '',
         max: 100,
     },
-    PHOTO: {
+    /*PHOTO: {
         type: String,
         default: '',
         max: 200
-    },
-    SOCIAL_MEDIA: {
+    },*/
+    /*SOCIAL_MEDIA: {
         TWITTER: {
             type: String,
             trim: true,
@@ -79,13 +79,13 @@ const UserSchema: Schema = new Schema({
             default: '',
             max: 200
         }
-    },
+    },*/
     TOKEN: {
         type: String,
         trim: true,
         default: ''
     },
-    PASSWORD_RESET_TOKEN: {
+    /*PASSWORD_RESET_TOKEN: {
         type: String,
         trim: true,
         default: ''
@@ -93,16 +93,16 @@ const UserSchema: Schema = new Schema({
     IS_PASSWORD_RESET: {
         type: Boolean,
         default: false
-    },
+    },*/
     ACTIVATION_TOKEN: {
         type: String,
         trim: true,
         default: ''
     },
-    IS_ACTIVE: {
+    /*IS_ACTIVE: {
         type: Boolean,
         default: false
-    },
+    },*/
     CREATEDAT: {
         type: Date,
         default: Date.now
@@ -125,7 +125,9 @@ UserSchema.methods.comparePassword = function (candidatePassword: string, callba
 };
 
 UserSchema.pre('save', function (next: any) {
-    const user = this;
+    const user = new User(this);
+    console.log("====== SAVE USERS ====== ");
+    console.log(user);
     const Auth = new Authentication();
     // tslint:disable-next-line:only-arrow-functions
     bcrypt.genSalt(10, function (err: any, salt: string) {

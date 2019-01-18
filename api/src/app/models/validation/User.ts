@@ -16,10 +16,10 @@ const UserValidation = {
         FACEBOOK: Joi.string().trim().label('facebook'),
         INSTAGRAM: Joi.string().trim().label('instagram')
     },*/
-    TOKEN: Joi.string().trim().label('user token'),
+    //TOKEN: Joi.string().trim().label('user token'),
     //PASSWORD_RESET_TOKEN: Joi.string().trim().label('reset token'),
     //IS_PASSWORD_RESET: Joi.boolean().label('password reset'),
-    ACTIVATION_TOKEN: Joi.string().trim().label('activation token'),
+    //ACTIVATION_TOKEN: Joi.string().trim().label('activation token'),
     //IS_ACTIVE: Joi.boolean().label('active')
 };
 
